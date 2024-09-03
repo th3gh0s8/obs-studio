@@ -433,12 +433,12 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
 
       - name: 'Download 64-bit artifact'
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: 'obs-studio-windows-x64-${{ steps.setup.outputs.commitHash }}'
 
       - name: 'Download 32-bit artifact'
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: 'obs-studio-windows-x86-${{ steps.setup.outputs.commitHash }}'
 
@@ -489,7 +489,7 @@ jobs:
 
       - name: 'Download artifact'
         if: env.HAVE_CODESIGN_IDENTITY == 'true'
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: 'obs-studio-macos-${{ matrix.arch }}-${{ steps.setup.outputs.commitHash }}'
 
